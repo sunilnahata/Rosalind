@@ -61,6 +61,9 @@ def main():
     with open(output_path, "w") as f:
         f.write(f"{highest_gc_seq_id}\n{highest_gc_content:.6f}\n")
 
+    print(f"{highest_gc_seq_id}\n{highest_gc_content:.6f}\n")
+    print(f"Results written to {output_path}")
+
 
 if __name__ == "__main__":
     main()
