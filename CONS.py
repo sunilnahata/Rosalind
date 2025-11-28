@@ -35,12 +35,11 @@ def consensus(profile_matrix):
     consensus_string = ""
     length = len(next(iter(profile_matrix.values())))
     for i in range(length):
-        max_nucleotide_count = -1
         max_occuring_nucleotide = ""
         for nucleotide in nucleotides:
-            if profile_matrix[nucleotide][i] > max_nucleotide_count:
-                max_nucleotide_count = profile_matrix[nucleotide][i]
-                max_occuring_nucleotide = nucleotide
+            max_occuring_nucleotide = max(
+                nucleotides, key=lambda nuc: profile_matrix[nuc][i]
+            )
         consensus_string += max_occuring_nucleotide
     return consensus_string
 
